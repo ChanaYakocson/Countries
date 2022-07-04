@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
 
 import { CountriesListComponent } from './countries-list.component';
 
@@ -8,8 +9,11 @@ describe('CountriesListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CountriesListComponent],
-    }).compileComponents();
+      declarations: [CountriesListComponent],imports: [
+      
+        HttpClientModule
+      ],}
+    ).compileComponents();
 
     fixture = TestBed.createComponent(CountriesListComponent);
     component = fixture.componentInstance;
@@ -19,4 +23,10 @@ describe('CountriesListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should render', () => {
+    const bannerElement: HTMLElement = fixture.nativeElement;
+    const p = bannerElement.querySelector('[data-test-charcters]')!;
+    expect(p).toBeTruthy();
+  });
+
 });

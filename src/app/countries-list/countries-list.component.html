@@ -2,7 +2,7 @@
 <p>description : {{ this.selectedState?.discription }}</p>
 <input (keyup)="onChangeValue($event)" #searchValue />
 
-<ul>
+<ul data-test-charcters>
   <li *ngFor="let countryChar of charsCountryList">
     <button (click)="onclickButton(countryChar)">{{ countryChar }}</button>
   </li>
