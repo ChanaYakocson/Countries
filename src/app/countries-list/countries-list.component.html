@@ -1,0 +1,14 @@
+<p>state : {{ this.selectedState?.state }}</p>
+<p>description : {{ this.selectedState?.discription }}</p>
+<input (keyup)="onChangeValue($event)" #searchValue />
+
+<ul>
+  <li *ngFor="let countryChar of charsCountryList">
+    <button (click)="onclickButton(countryChar)">{{ countryChar }}</button>
+  </li>
+  <div *ngFor="let country of searchedCoutries">
+    <div (click)="onClickCountry(country)">{{ country.name }}</div>
+  </div>
+</ul>
+
+<app-country [country]="selectedCountry"></app-country>

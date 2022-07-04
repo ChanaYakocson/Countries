@@ -1,0 +1,21 @@
+<div *ngIf="country">
+    {{country.name}}
+  <table>
+    <tr>
+      <th>Capital</th>
+      <td>{{ country?.capital }}</td>
+    </tr>
+    <tr>
+      <th>Population</th>
+      <td>{{ country?.population }}</td>
+    </tr>
+    <tr>
+      <th>currencies</th>
+      <td *ngFor="let currency of country?.currencies">{{ currency.name }},</td>
+    </tr>
+    <tr>
+      <th>Flag</th>
+      <td><img src="{{ country?.flag }}" /></td>
+    </tr>
+  </table>
+</div>
